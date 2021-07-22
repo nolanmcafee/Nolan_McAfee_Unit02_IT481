@@ -13,13 +13,15 @@ namespace BusinessLogic
     public class BLL
     {
         //string connection = ConfigurationManager.ConnectionStrings["Northwind"].ToString();
-        static string connection = "Data Source=DESKTOP-EKHOH1V\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
+        //string connection = ConfigurationManager.ConnectionStrings["Northwind"].ConnectionString;
+        //static string connection = "Data Source=DESKTOP-EKHOH1V\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
+        //static string connection = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True"; //KNOWN GOOD CONFIGURATION
         //static string connection;
         private DAL dataCustomers;
         private List<CO> allData;
         private List<string> nameData;
 
-        public BLL()
+        public BLL(string connection)
         {
             dataCustomers = new DAL(connection);
             allData = dataCustomers.getAllData();
